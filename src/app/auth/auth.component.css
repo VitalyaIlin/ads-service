@@ -1,0 +1,25 @@
+form{
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.alert{
+    opacity: 0;
+}
+
+.user-panel{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 0.25rem;
+}
+
+.user-panel>p{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}

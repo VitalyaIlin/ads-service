@@ -1,0 +1,9 @@
+<div class="ad">
+  <p>{{ad.title}}</p>
+  <p>Author: {{ad.author}}</p>
+  <p>{{ad.description}}</p>
+  <p>{{ad.creationDate}}</p>
+
+  <button class="btn btn-primary" *ngIf="flag" (click)="deleteAd()">Delete</button>
+  <a class="btn btn-primary" *ngIf="flag" [routerLink]="['/edit', ad.id]">Edit</a>
+</div>

@@ -1,0 +1,11 @@
+<form [formGroup]="createAdForm" (submit)="createAd(createAdForm.value)">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" formControlName="title" id="title" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <label for="desc">Description</label>
+    <textarea name="" id="" cols="30" rows="10" class="form-control" formControlName="description" id="desc" placeholder="Description"></textarea>
+  </div>
+  <button type="submit" [disabled]="createAdForm.invalid" *ngIf="!isEditFlag" class="btn btn-primary">Create</button>
+</form>

@@ -1,0 +1,18 @@
+<section>
+    <div @isVissible *ngFor="let ad of ads | paginate: { itemsPerPage: 5, currentPage: p }" class="ad">
+        <a [routerLink]="['', ad.id]">{{ad.title}}</a>
+        <p>Author: <span>{{ad.author}}</span></p>
+        <p>{{ad.description}}</p>
+        <div class="add-footer">
+            <p>{{ad.creationDate}}</p>
+            <div>
+                <button class="btn btn-primary" *ngIf="ad.author == currentUserName" (click)="deleteAd(ad)">Delete</button>
+                <a class="btn btn-primary" *ngIf="ad.author == currentUserName" [routerLink]="['edit', ad.id]">Edit</a>
+            </div>
+        </div>
+    </div>
+    <pagination-controls autoHide="true"  (pageChange)="p = $event"  class="my-pagination"></pagination-controls>
+</section>
+
+
+

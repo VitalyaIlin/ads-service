@@ -1,0 +1,25 @@
+<section>
+  <!--<div class="alert alert-primary">
+      {{alertText}} 
+  </div>-->
+  <form [formGroup]="authForm" (submit)="authrization(authForm.value)" *ngIf="!isAuthrizated" @isVissible>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" formControlName="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+    </div>
+    <button type="submit" [disabled]="authForm.invalid" class="btn btn-primary">Submit</button>
+  </form>
+
+  <div *ngIf="isAuthrizated" @isVissible class="user-panel">
+    <p>Username: {{username}}</p>
+    <div>
+        <button class="btn btn-primary" (click)="logout()">Logout</button>
+        <a class="btn btn-primary" routerLink="edit">Create Ad</a>
+    </div>
+  </div>
+
+</section>
