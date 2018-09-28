@@ -26,7 +26,6 @@ export class AuthComponent implements OnInit {
   username: string = localStorage.getItem('currentUserName') ? localStorage.getItem('currentUserName') : "";
   password: string;
   isAuthrizated: boolean = (localStorage.getItem('isAuthrizated') == 'true');
-  alertText: string;
 
   constructor(private us: UserService) {}
 
@@ -37,6 +36,7 @@ export class AuthComponent implements OnInit {
     });
   }
 
+
   authrization(data){
     this.username = data.username;
     this.password = data.password;
@@ -44,7 +44,7 @@ export class AuthComponent implements OnInit {
 
     if(lsData === null){
       localStorage.setItem(this.username, this.password);
-      this.alertText = "You profile was created! You are authorized!"
+      alert("You profile was created! You are authorized!");
       localStorage.setItem('isAuthrizated', 'true');
       localStorage.setItem('currentUserName', this.username);
       this.isAuthrizated = true;
@@ -52,11 +52,11 @@ export class AuthComponent implements OnInit {
     }else if(lsData == this.password){
       localStorage.setItem('isAuthrizated', 'true');
       localStorage.setItem('currentUserName', this.username);
-      this.alertText = "You are authorized!"
+      alert("You are authorized!");
       this.isAuthrizated = true;
       this.us.currentUsername.next(this.username);   
     }else{
-      this.alertText = "Wrong password!"
+      alert("Wrong password!");
     }
 
   }

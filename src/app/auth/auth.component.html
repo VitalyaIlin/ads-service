@@ -6,10 +6,12 @@
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" formControlName="username" placeholder="Username">
+      <p class="prompt">Only letters and numbers</p>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+      <p class="prompt">The password must consist of numbers, big and small letters. Minimum 6 characters</p>
     </div>
     <button type="submit" [disabled]="authForm.invalid" class="btn btn-primary">Submit</button>
   </form>
